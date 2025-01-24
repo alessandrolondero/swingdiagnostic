@@ -1,360 +1,326 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="MainWindow">
-  <grid id="27dc6" binding="panel1" layout-manager="GridLayoutManager" row-count="4" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-    <margin top="10" left="10" bottom="10" right="10"/>
+  <grid id="27dc6" binding="panel1" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="10" left="20" bottom="20" right="20"/>
     <constraints>
-      <xy x="20" y="35" width="973" height="915"/>
+      <xy x="20" y="35" width="973" height="1010"/>
     </constraints>
     <properties/>
     <border type="none"/>
     <children>
-      <grid id="75f7b" layout-manager="GridLayoutManager" row-count="20" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="75f7b" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties/>
         <border type="none"/>
         <children>
-          <component id="ce279" class="javax.swing.JLabel">
+          <scrollpane id="350a7">
             <constraints>
-              <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
-                <preferred-size width="162" height="17"/>
-              </grid>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="TEST INGRESSI AUDIO"/>
+              <horizontalScrollBarPolicy value="30"/>
             </properties>
-          </component>
-          <component id="6ef0d" class="javax.swing.JButton" binding="SPARE_MICButton" default-binding="true">
-            <constraints>
-              <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="162" height="34"/>
-              </grid>
-            </constraints>
-            <properties>
-              <text value="SPARE_MIC"/>
-            </properties>
-          </component>
-          <component id="ea5da" class="javax.swing.JButton" binding="CABIN_MICButton" default-binding="true">
-            <constraints>
-              <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="162" height="34"/>
-              </grid>
-            </constraints>
-            <properties>
-              <text value="CABIN_MIC"/>
-            </properties>
-          </component>
-          <component id="eb700" class="javax.swing.JButton" binding="HANDSET_MICButton">
-            <constraints>
-              <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="162" height="34"/>
-              </grid>
-            </constraints>
-            <properties>
-              <text value="HANDSET_MIC"/>
-            </properties>
-          </component>
-          <component id="9e7db" class="javax.swing.JLabel">
-            <constraints>
-              <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
-                <preferred-size width="162" height="17"/>
-              </grid>
-            </constraints>
-            <properties>
-              <text value="TEST USCITE DIGITALI"/>
-            </properties>
-          </component>
-          <component id="fdffb" class="javax.swing.JLabel">
-            <constraints>
-              <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
-                <preferred-size width="162" height="17"/>
-              </grid>
-            </constraints>
-            <properties>
-              <text value="TEST DI RETE"/>
-            </properties>
-          </component>
-          <component id="e47f6" class="javax.swing.JButton" binding="LAN_TESTButton" default-binding="true">
-            <constraints>
-              <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="162" height="34"/>
-              </grid>
-            </constraints>
-            <properties>
-              <text value="LAN_TEST"/>
-            </properties>
-          </component>
-          <component id="bee9c" class="javax.swing.JLabel">
-            <constraints>
-              <grid row="14" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
-                <preferred-size width="162" height="17"/>
-              </grid>
-            </constraints>
-            <properties>
-              <text value="TEST USCITE AUDIO"/>
-            </properties>
-          </component>
-          <component id="4a0ee" class="javax.swing.JButton" binding="PA_TESTButton" default-binding="true">
-            <constraints>
-              <grid row="15" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="162" height="34"/>
-              </grid>
-            </constraints>
-            <properties>
-              <text value="PA_TEST"/>
-            </properties>
-          </component>
-          <component id="8ce4c" class="javax.swing.JButton" binding="CABIN_TESTButton" default-binding="true">
-            <constraints>
-              <grid row="16" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="162" height="34"/>
-              </grid>
-            </constraints>
-            <properties>
-              <text value="CABIN_TEST"/>
-            </properties>
-          </component>
-          <component id="f78c6" class="javax.swing.JButton" binding="HANDSET_TESTButton" default-binding="true">
-            <constraints>
-              <grid row="19" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="162" height="34"/>
-              </grid>
-            </constraints>
-            <properties>
-              <text value="HANDSET_TEST"/>
-            </properties>
-          </component>
-          <component id="90a2a" class="javax.swing.JButton" binding="OUT3_AMP_TESTButton" default-binding="true">
-            <constraints>
-              <grid row="18" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="162" height="34"/>
-              </grid>
-            </constraints>
-            <properties>
-              <text value="OUT#3_AMP_TEST"/>
-            </properties>
-          </component>
-          <component id="377ba" class="javax.swing.JButton" binding="SPARE_TESTButton" default-binding="true">
-            <constraints>
-              <grid row="17" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="162" height="34"/>
-              </grid>
-            </constraints>
-            <properties>
-              <text value="SPARE_TEST"/>
-            </properties>
-          </component>
-          <component id="69e37" class="javax.swing.JButton" binding="D_INButton" default-binding="true">
-            <constraints>
-              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="162" height="34"/>
-              </grid>
-            </constraints>
-            <properties>
-              <text value="D_IN"/>
-            </properties>
-          </component>
-          <component id="2918e" class="javax.swing.JButton" binding="CABIN_PTTButton" default-binding="true">
-            <constraints>
-              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="162" height="34"/>
-              </grid>
-            </constraints>
-            <properties>
-              <text value="CABIN_PTT"/>
-            </properties>
-          </component>
-          <component id="5be4d" class="javax.swing.JButton" binding="HANDSET_PTTButton" default-binding="true">
-            <constraints>
-              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="162" height="34"/>
-              </grid>
-            </constraints>
-            <properties>
-              <text value="HANDSET_PTT"/>
-            </properties>
-          </component>
-          <component id="ffc91" class="javax.swing.JButton" binding="HANDSET_HOOKButton" default-binding="true">
-            <constraints>
-              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="162" height="34"/>
-              </grid>
-            </constraints>
-            <properties>
-              <text value="HANDSET_HOOK"/>
-            </properties>
-          </component>
-          <grid id="558d3" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-            <margin top="0" left="0" bottom="0" right="0"/>
-            <constraints>
-              <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="162" height="38"/>
-              </grid>
-            </constraints>
-            <properties/>
-            <border type="none"/>
+            <border type="empty"/>
             <children>
-              <component id="24281" class="javax.swing.JButton" binding="D_OUT1Button">
-                <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
-                    <preferred-size width="162" height="34"/>
+              <grid id="8418f" layout-manager="GridLayoutManager" row-count="20" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints/>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <component id="ce279" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="4" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <text value="INGRESSI AUDIO"/>
+                    </properties>
+                  </component>
+                  <component id="6ef0d" class="javax.swing.JButton" binding="SPARE_MICButton" default-binding="true">
+                    <constraints>
+                      <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="162" height="34"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <text value="SPARE_MIC"/>
+                    </properties>
+                  </component>
+                  <component id="ea5da" class="javax.swing.JButton" binding="CABIN_MICButton" default-binding="true">
+                    <constraints>
+                      <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="162" height="34"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <text value="CABIN_MIC"/>
+                    </properties>
+                  </component>
+                  <component id="eb700" class="javax.swing.JButton" binding="HANDSET_MICButton">
+                    <constraints>
+                      <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="162" height="34"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <text value="HANDSET_MIC"/>
+                    </properties>
+                  </component>
+                  <component id="9e7db" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <text value="USCITE DIGITALI"/>
+                    </properties>
+                  </component>
+                  <component id="fdffb" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <text value="RETE"/>
+                    </properties>
+                  </component>
+                  <component id="e47f6" class="javax.swing.JButton" binding="LAN_TESTButton" default-binding="true">
+                    <constraints>
+                      <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="162" height="34"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <text value="LAN_TEST"/>
+                    </properties>
+                  </component>
+                  <component id="bee9c" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="14" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <text value="USCITE AUDIO"/>
+                    </properties>
+                  </component>
+                  <component id="4a0ee" class="javax.swing.JButton" binding="PA_TESTButton" default-binding="true">
+                    <constraints>
+                      <grid row="15" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="162" height="34"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <text value="PA_TEST"/>
+                    </properties>
+                  </component>
+                  <component id="8ce4c" class="javax.swing.JButton" binding="CABIN_TESTButton" default-binding="true">
+                    <constraints>
+                      <grid row="16" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="162" height="34"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <text value="CABIN_TEST"/>
+                    </properties>
+                  </component>
+                  <component id="f78c6" class="javax.swing.JButton" binding="HANDSET_TESTButton" default-binding="true">
+                    <constraints>
+                      <grid row="19" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="162" height="34"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <text value="HANDSET_TEST"/>
+                    </properties>
+                  </component>
+                  <component id="90a2a" class="javax.swing.JButton" binding="OUT3_AMP_TESTButton" default-binding="true">
+                    <constraints>
+                      <grid row="18" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="162" height="34"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <text value="OUT#3_AMP_TEST"/>
+                    </properties>
+                  </component>
+                  <component id="377ba" class="javax.swing.JButton" binding="SPARE_TESTButton" default-binding="true">
+                    <constraints>
+                      <grid row="17" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="162" height="34"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <text value="SPARE_TEST"/>
+                    </properties>
+                  </component>
+                  <component id="69e37" class="javax.swing.JButton" binding="D_INButton" default-binding="true">
+                    <constraints>
+                      <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="162" height="34"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <alignmentY value="0.5"/>
+                      <borderPainted value="true"/>
+                      <contentAreaFilled value="true"/>
+                      <text value="D_IN"/>
+                    </properties>
+                  </component>
+                  <component id="2918e" class="javax.swing.JButton" binding="CABIN_PTTButton" default-binding="true">
+                    <constraints>
+                      <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="162" height="34"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <text value="CABIN_PTT"/>
+                    </properties>
+                  </component>
+                  <component id="5be4d" class="javax.swing.JButton" binding="HANDSET_PTTButton" default-binding="true">
+                    <constraints>
+                      <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="162" height="34"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <text value="HANDSET_PTT"/>
+                    </properties>
+                  </component>
+                  <component id="ffc91" class="javax.swing.JButton" binding="HANDSET_HOOKButton" default-binding="true">
+                    <constraints>
+                      <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="162" height="34"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <text value="HANDSET_HOOK"/>
+                    </properties>
+                  </component>
+                  <grid id="558d3" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints>
+                      <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <component id="24281" class="javax.swing.JButton" binding="D_OUT1Button">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                            <preferred-size width="-1" height="34"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <text value="LED=1"/>
+                        </properties>
+                      </component>
+                      <component id="bbbe1" class="javax.swing.JButton" binding="D_OUT0Button">
+                        <constraints>
+                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                            <preferred-size width="-1" height="34"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <text value="LED=0"/>
+                        </properties>
+                      </component>
+                    </children>
                   </grid>
-                </constraints>
-                <properties>
-                  <text value="D_OUT=1"/>
-                </properties>
-              </component>
-              <component id="bbbe1" class="javax.swing.JButton" binding="D_OUT0Button">
-                <constraints>
-                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false">
-                    <preferred-size width="162" height="34"/>
-                  </grid>
-                </constraints>
-                <properties>
-                  <text value="D_OUT=0"/>
-                </properties>
-              </component>
+                  <component id="9e41a" class="javax.swing.JButton" binding="PA_PTTButton" default-binding="true">
+                    <constraints>
+                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="162" height="34"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <text value="PA_PTT"/>
+                    </properties>
+                  </component>
+                  <component id="ce99f" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <text value="INGRESSI DIGITALI"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
             </children>
-          </grid>
-          <component id="9e41a" class="javax.swing.JButton" binding="PA_PTTButton" default-binding="true">
+          </scrollpane>
+          <scrollpane id="8a92d">
             <constraints>
-              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="162" height="34"/>
-              </grid>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="PA_PTT"/>
+              <horizontalScrollBarPolicy value="30"/>
             </properties>
-          </component>
-          <component id="26cc" class="javax.swing.JButton" binding="CABIN_BENCH_Button">
-            <constraints>
-              <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="162" height="34"/>
+            <border type="empty"/>
+            <children>
+              <grid id="874e5" layout-manager="GridLayoutManager" row-count="5" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints/>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <component id="26cc" class="javax.swing.JButton" binding="CABIN_BENCH_Button">
+                    <constraints>
+                      <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="162" height="34"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <text value="CABIN"/>
+                    </properties>
+                  </component>
+                  <component id="1a804" class="javax.swing.JButton" binding="IN2OUT2_BENCH_Button">
+                    <constraints>
+                      <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="162" height="34"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <text value="IN#2 OUT#2"/>
+                    </properties>
+                  </component>
+                  <component id="db8e7" class="javax.swing.JButton" binding="HANDSET_BENCH_Button">
+                    <constraints>
+                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="162" height="34"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <text value="HANDSET"/>
+                    </properties>
+                  </component>
+                  <component id="69449" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <text value="BENCH TEST"/>
+                    </properties>
+                  </component>
+                  <component id="d5dc6" class="javax.swing.JButton" binding="BLINKButton" default-binding="true">
+                    <constraints>
+                      <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="162" height="34"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <text value="ATTIVA BLINK"/>
+                    </properties>
+                  </component>
+                </children>
               </grid>
-            </constraints>
-            <properties>
-              <text value="CABIN"/>
-            </properties>
-          </component>
-          <component id="1a804" class="javax.swing.JButton" binding="IN2OUT2_BENCH_Button">
-            <constraints>
-              <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="162" height="34"/>
-              </grid>
-            </constraints>
-            <properties>
-              <text value="IN#2 OUT#2"/>
-            </properties>
-          </component>
-          <component id="db8e7" class="javax.swing.JButton" binding="HANDSET_BENCH_Button">
-            <constraints>
-              <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="162" height="34"/>
-              </grid>
-            </constraints>
-            <properties>
-              <text value="HANDSET"/>
-            </properties>
-          </component>
-          <component id="ce99f" class="javax.swing.JLabel">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
-                <preferred-size width="206" height="17"/>
-              </grid>
-            </constraints>
-            <properties>
-              <text value="TEST INGRESSI DIGITALI"/>
-            </properties>
-          </component>
-          <component id="69449" class="javax.swing.JLabel">
-            <constraints>
-              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <text value="BENCH TEST"/>
-            </properties>
-          </component>
-          <hspacer id="e8deb">
-            <constraints>
-              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                <minimum-size width="10" height="-1"/>
-              </grid>
-            </constraints>
-          </hspacer>
-          <component id="d5dc6" class="javax.swing.JButton" binding="BLINKButton" default-binding="true">
-            <constraints>
-              <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="162" height="34"/>
-              </grid>
-            </constraints>
-            <properties>
-              <text value="ATTIVA BLINK"/>
-            </properties>
-          </component>
+            </children>
+          </scrollpane>
         </children>
       </grid>
-      <component id="5367b" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Volume Speaker"/>
-        </properties>
-      </component>
-      <component id="8c922" class="javax.swing.JSlider" binding="volumeslider">
-        <constraints>
-          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="9" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <alignmentX value="0.5"/>
-          <doubleBuffered value="false"/>
-          <foreground color="-7697521"/>
-          <value value="70"/>
-        </properties>
-      </component>
-      <component id="a3ce4" class="javax.swing.JLabel" binding="volumeLabel">
-        <constraints>
-          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <font size="14" style="1"/>
-          <text value="Volume: 70%"/>
-        </properties>
-      </component>
-      <component id="765c7" class="javax.swing.JButton" binding="clearDisplayButton">
-        <constraints>
-          <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="162" height="34"/>
-          </grid>
-        </constraints>
-        <properties>
-          <text value="pulisci DISPLAY"/>
-        </properties>
-      </component>
-      <component id="5c6f8" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="206" height="17"/>
-          </grid>
-        </constraints>
-        <properties>
-          <text value="SELEZIONE TEST"/>
-        </properties>
-      </component>
-      <component id="99018" class="javax.swing.JToolBar$Separator">
-        <constraints>
-          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false">
-            <minimum-size width="100" height="-1"/>
-          </grid>
-        </constraints>
-        <properties/>
-      </component>
       <grid id="5e258" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="3" column="2" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="true"/>
         </constraints>
         <properties/>
         <border type="none"/>
@@ -377,10 +343,79 @@
           </scrollpane>
           <component id="88df5" class="javax.swing.JLabel">
             <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="CONSOLE OUTPUT"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="e9f4" layout-manager="GridLayoutManager" row-count="3" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-6250332"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="5367b" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="3" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Volume Speaker"/>
+            </properties>
+          </component>
+          <component id="8c922" class="javax.swing.JSlider" binding="volumeslider">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="0" fill="3" indent="3" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <alignmentX value="0.5"/>
+              <doubleBuffered value="false"/>
+              <foreground color="-7697521"/>
+              <inverted value="false"/>
+              <orientation value="0"/>
+              <paintLabels value="false"/>
+              <paintTicks value="false"/>
+              <snapToTicks value="false"/>
+              <value value="70"/>
+              <valueIsAdjusting value="false"/>
+            </properties>
+            <clientProperties>
+              <JSlider.isFilled class="java.lang.Boolean" value="true"/>
+              <Slider.paintThumbArrowShape class="java.lang.Boolean" value="true"/>
+            </clientProperties>
+          </component>
+          <component id="a3ce4" class="javax.swing.JLabel" binding="volumeLabel">
+            <constraints>
+              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="3" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font size="14" style="1"/>
+              <text value="Volume: 70%"/>
+            </properties>
+          </component>
+          <component id="765c7" class="javax.swing.JButton" binding="clearDisplayButton">
+            <constraints>
+              <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="5" fill="0" indent="2" use-parent-layout="false">
+                <preferred-size width="162" height="34"/>
+              </grid>
+            </constraints>
+            <properties>
+              <label value="Pulisci Console"/>
+              <text value="Pulisci Console"/>
+            </properties>
+          </component>
+          <component id="5c6f8" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="SELEZIONE TEST"/>
             </properties>
           </component>
         </children>

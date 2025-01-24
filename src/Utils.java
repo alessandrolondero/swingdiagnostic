@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 
 public class Utils {
 
+        //da valutare se eliminare e sostituire definitivamente con quella successiva (execProcess)
         static public String executeProcess(String[] command) {
             String res = "";
             try {
@@ -26,6 +27,7 @@ public class Utils {
             return res;
         }
 
+        //da valutare se migliorare e come
         public static void execProcess(String command, JTextArea textArea) {
             try {
                 // Creazione del processo con il comando
@@ -47,7 +49,9 @@ public class Utils {
                 e.printStackTrace();
             }
         }
-        //aggiungere controllo che il file sample sia presente
+
+        //aggiungere controllo che il file sample sia presente e lanciare eventualmente un eccezione
+        //eventualmente aggiungere paramentro per il text file (con controllo dell'esistenza come accennato sopra)
         static public void playSampleAudio(JTextArea textArea){
             new Thread(new Runnable() {
                 @Override
@@ -68,6 +72,7 @@ public class Utils {
             }).start();
         }
 
+        //da migliorare
         static public void setMuxCtrl(int value, JTextArea textArea){
 
             new Thread(new Runnable() {
@@ -77,7 +82,7 @@ public class Utils {
                         String gpioValue= "5="+value;
                         String[] gpioCommand = {"gpioset", "gpiochip4", gpioValue}; // Imposta AUDIO_MUX_CTRL=value
                         Process gpioSetProcess = new ProcessBuilder(gpioCommand).start();
-                        textArea.append("AUDIO_MUX_CTRL=" + value+ "\n");
+                        textArea.append("AUDIO_MUX_CTRL=" + value+ "\n");           //c'è un delay su questo append rispetto al resto delle operazioni
                         gpioSetProcess.waitFor(); // Aspetta che gpioSet termini
 
                     } catch (IOException | InterruptedException ex) {
@@ -98,16 +103,19 @@ public class Utils {
          * @param line     La linea GPIO da monitorare (es: "21")
          * @param textArea La textArea dove verrà scritto l'output
          */
+        //buona, da valutare se migliorabile
         public static void executeGpioTest(String gpioChip, String line, JTextArea textArea) {
             new Thread(() -> {
+                Process process = null;
+                BufferedReader reader = null;
                 try {
                     // Comando da eseguire
                     String[] command = {"gpiomon", "-f", "-n", "1", gpioChip, line};
                     ProcessBuilder processBuilder = new ProcessBuilder(command);
-                    Process process = processBuilder.start();
+                    process = processBuilder.start();
 
                     // Leggi l'output del processo in tempo reale
-                    BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+                    reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
                     String outputLine;
 
                     while ((outputLine = reader.readLine()) != null) {
@@ -124,12 +132,24 @@ public class Utils {
                 } catch (IOException | InterruptedException ex) {
                     SwingUtilities.invokeLater(() -> textArea.append("Errore durante l'esecuzione del test.\n"));
                     ex.printStackTrace();
+                } finally {
+                    // Chiudere le risorse
+                    try {
+                        if (reader != null) {
+                            reader.close();
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    if (process != null && process.isAlive()) {
+                        process.destroy();
+                    }
                 }
             }).start();
         }
 
 
-
+    //mai utilizzata, si usa quello di default.
     static void setTheme(String name, MainWindow frame ) {
         try {
             // Imposta il tema Nimbus

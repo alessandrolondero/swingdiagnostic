@@ -45,7 +45,6 @@ public class MainWindow extends JFrame {
     public MainWindow() {
 
         final boolean[] isBlinkActive = {false};
-        final Thread[] blinkThread = {null};
         final Process[] blinkProcess = {null}; // Array per memorizzare il processo in esecuzione private Process[] processHolder = new Process[1]; // Array per memorizzare il processo in esecuzione
 
         //Utils.setTheme( "javax.swing.plaf.nimbus.NimbusLookAndFeel", this);
@@ -170,7 +169,7 @@ public class MainWindow extends JFrame {
                 }).start();
             }
         });
-        //controllare settaggi microfoni poiche i test non sono consistenti
+
         CABIN_MICButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -384,12 +383,7 @@ public class MainWindow extends JFrame {
             }
         });
 
-
-
-
     }
-
-
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
