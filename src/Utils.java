@@ -6,29 +6,6 @@ import java.io.InputStreamReader;
 
 public class Utils {
 
-        //da valutare se eliminare e sostituire definitivamente con quella successiva (execProcess)
-        /*
-        static public String executeProcess(String[] command) {
-            String res = "";
-            try {
-                ProcessBuilder processBuilder = new ProcessBuilder(command);
-                Process process = processBuilder.start();
-
-                BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-                String line;
-                while ((line = reader.readLine()) != null) {
-                    res += line;
-                    res += "\n";
-                }
-
-                process.waitFor();
-            } catch (IOException | InterruptedException e) {
-                e.printStackTrace();
-            }
-
-            return res;
-        }
-        */
 
         private static JTextArea defaultTextArea = null;
 
@@ -65,7 +42,6 @@ public class Utils {
     /**
      * Riproduce un file audio WAV specifico (/home/root/Audio/Front_Center.wav)
      * utilizzando il comando 'aplay' in un thread separato.
-     *
      * Prima di avviare la riproduzione, verifica che il file esista.
      * L'output informativo e gli eventuali errori vengono scritti sulla
      * JTextArea predefinita 'defaultTextArea'.
@@ -111,21 +87,18 @@ public class Utils {
 
             JTextArea outputArea = defaultTextArea;
 
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        String gpioValue= "5="+value;
-                        String[] gpioCommand = {"gpioset", "gpiochip4", gpioValue}; // Imposta AUDIO_MUX_CTRL=value
-                        Process gpioSetProcess = new ProcessBuilder(gpioCommand).start();
-                        outputArea.append("AUDIO_MUX_CTRL=" + value+ "\n");           //c'è un delay su questo append rispetto al resto delle operazioni
-                        gpioSetProcess.waitFor(); // Aspetta che gpioSet termini
+            new Thread(() -> {
+                try {
+                    String gpioValue= "5="+value;
+                    String[] gpioCommand = {"gpioset", "gpiochip4", gpioValue}; // Imposta AUDIO_MUX_CTRL=value
+                    Process gpioSetProcess = new ProcessBuilder(gpioCommand).start();
+                    outputArea.append("AUDIO_MUX_CTRL=" + value+ "\n");           //c'è un delay su questo append rispetto al resto delle operazioni
+                    gpioSetProcess.waitFor(); // Aspetta che gpioSet termini
 
-                    } catch (IOException | InterruptedException ex) {
-                        ex.printStackTrace();
-                        outputArea.append("Si è verificato un errore durante l'esecuzione dei comandi.\n");
+                } catch (IOException | InterruptedException ex) {
+                    ex.printStackTrace();
+                    outputArea.append("Si è verificato un errore durante l'esecuzione dei comandi.\n");
 
-                    }
                 }
             }).start();
         }
@@ -186,17 +159,6 @@ public class Utils {
             }).start();
         }
 
-
-    //mai utilizzata, si usa quello di default.
-    static void setTheme(String name, MainWindow frame ) {
-        try {
-            // Imposta il tema Nimbus
-            UIManager.setLookAndFeel(name);
-            SwingUtilities.updateComponentTreeUI(frame);
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-    }
     }
 
 

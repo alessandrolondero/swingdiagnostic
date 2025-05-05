@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="swingtemurin1:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/swingtemurin1_jar</output-path>
-    <root id="archive" name="swingtemurin1.jar">
-      <element id="module-output" name="swingtemurin1" />
-    </root>
-  </artifact>
-</component>

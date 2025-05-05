@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/swingtemurin1.iml" filepath="$PROJECT_DIR$/swingtemurin1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vputestsuite.iml" filepath="$PROJECT_DIR$/vputestsuite.iml" />
     </modules>
   </component>
 </project>
