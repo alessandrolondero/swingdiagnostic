@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
@@ -61,28 +62,46 @@ public class Utils {
             }
         }
 
-        //aggiungere controllo che il file sample sia presente e lanciare eventualmente un eccezione
-        //eventualmente aggiungere paramentro per il text file (con controllo dell'esistenza come accennato sopra)
-        static public void playSampleAudio(){
-
+    /**
+     * Riproduce un file audio WAV specifico (/home/root/Audio/Front_Center.wav)
+     * utilizzando il comando 'aplay' in un thread separato.
+     *
+     * Prima di avviare la riproduzione, verifica che il file esista.
+     * L'output informativo e gli eventuali errori vengono scritti sulla
+     * JTextArea predefinita 'defaultTextArea'.
+     *
+     */
+        static public void playSampleAudio() {
             JTextArea outputArea = defaultTextArea;
 
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
+            new Thread(() -> {
+                File sampleFile = new File("/home/root/Audio/Front_Center.wav");
 
-                        outputArea.append("Avvio riproduzione audio...\n");
-                        String[] aplayCommand = {"aplay", "/home/root/Audio/Front_Center.wav"};
-                        Process aplayProcess = new ProcessBuilder(aplayCommand).start();
-                        aplayProcess.waitFor(); // Aspetta che aplay termini
-                        outputArea.append("Comando aplay completato.\n");
+                if (!sampleFile.exists()) {
+                    SwingUtilities.invokeLater(() ->
+                            outputArea.append("Errore: Il file audio non esiste: " + sampleFile.getAbsolutePath() + "\n")
+                    );
+                    return;
+                }
 
-                    } catch (IOException | InterruptedException ex) {
-                        ex.printStackTrace();
-                        outputArea.append("Si è verificato un errore durante l'esecuzione dei comandi.\n");
+                try {
+                    SwingUtilities.invokeLater(() ->
+                            outputArea.append("Avvio riproduzione audio...\n")
+                    );
 
-                    }
+                    String[] aplayCommand = {"aplay", sampleFile.getAbsolutePath()};
+                    Process aplayProcess = new ProcessBuilder(aplayCommand).start();
+                    aplayProcess.waitFor(); // Aspetta che aplay termini
+
+                    SwingUtilities.invokeLater(() ->
+                            outputArea.append("Comando aplay completato.\n")
+                    );
+
+                } catch (IOException | InterruptedException ex) {
+                    ex.printStackTrace();
+                    SwingUtilities.invokeLater(() ->
+                            outputArea.append("Si è verificato un errore durante l'esecuzione dei comandi.\n")
+                    );
                 }
             }).start();
         }
