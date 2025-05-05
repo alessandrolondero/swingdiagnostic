@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 public class Utils {
 
         //da valutare se eliminare e sostituire definitivamente con quella successiva (execProcess)
+        /*
         static public String executeProcess(String[] command) {
             String res = "";
             try {
@@ -26,10 +27,20 @@ public class Utils {
 
             return res;
         }
+        */
 
-        //da valutare se migliorare e come
-        public static void execProcess(String command, JTextArea textArea) {
+        private static JTextArea defaultTextArea = null;
+
+        public static void setDefaultTextArea(JTextArea textArea) {
+            defaultTextArea = textArea;
+        }
+
+
+    //da valutare se migliorare e come
+        //magari accorpare le due funzioni in una sola e aggiungere il parametro outToTextArea(boolean) per stabilire dove l'output deve essere indirizzato
+        public static void execProcess(String command) {
             try {
+                JTextArea outputArea = defaultTextArea;
                 // Creazione del processo con il comando
                 ProcessBuilder builder = new ProcessBuilder("bash", "-c", command);
                 builder.redirectErrorStream(true);
@@ -39,7 +50,7 @@ public class Utils {
                 try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
                     String line;
                     while ((line = reader.readLine()) != null) {
-                        textArea.append(line+"\n"); // Stampa l'output del comando
+                        outputArea.append(line+"\n"); // Stampa l'output del comando
                     }
                 }
 
@@ -52,20 +63,24 @@ public class Utils {
 
         //aggiungere controllo che il file sample sia presente e lanciare eventualmente un eccezione
         //eventualmente aggiungere paramentro per il text file (con controllo dell'esistenza come accennato sopra)
-        static public void playSampleAudio(JTextArea textArea){
+        static public void playSampleAudio(){
+
+            JTextArea outputArea = defaultTextArea;
+
             new Thread(new Runnable() {
                 @Override
                 public void run() {
                     try {
-                        textArea.append("Avvio riproduzione audio...\n");
+
+                        outputArea.append("Avvio riproduzione audio...\n");
                         String[] aplayCommand = {"aplay", "/home/root/Audio/Front_Center.wav"};
                         Process aplayProcess = new ProcessBuilder(aplayCommand).start();
                         aplayProcess.waitFor(); // Aspetta che aplay termini
-                        textArea.append("Comando aplay completato.\n");
+                        outputArea.append("Comando aplay completato.\n");
 
                     } catch (IOException | InterruptedException ex) {
                         ex.printStackTrace();
-                        textArea.append("Si è verificato un errore durante l'esecuzione dei comandi.\n");
+                        outputArea.append("Si è verificato un errore durante l'esecuzione dei comandi.\n");
 
                     }
                 }
@@ -73,7 +88,9 @@ public class Utils {
         }
 
         //da migliorare
-        static public void setMuxCtrl(int value, JTextArea textArea){
+        static public void setMuxCtrl(int value){
+
+            JTextArea outputArea = defaultTextArea;
 
             new Thread(new Runnable() {
                 @Override
@@ -82,12 +99,12 @@ public class Utils {
                         String gpioValue= "5="+value;
                         String[] gpioCommand = {"gpioset", "gpiochip4", gpioValue}; // Imposta AUDIO_MUX_CTRL=value
                         Process gpioSetProcess = new ProcessBuilder(gpioCommand).start();
-                        textArea.append("AUDIO_MUX_CTRL=" + value+ "\n");           //c'è un delay su questo append rispetto al resto delle operazioni
+                        outputArea.append("AUDIO_MUX_CTRL=" + value+ "\n");           //c'è un delay su questo append rispetto al resto delle operazioni
                         gpioSetProcess.waitFor(); // Aspetta che gpioSet termini
 
                     } catch (IOException | InterruptedException ex) {
                         ex.printStackTrace();
-                        textArea.append("Si è verificato un errore durante l'esecuzione dei comandi.\n");
+                        outputArea.append("Si è verificato un errore durante l'esecuzione dei comandi.\n");
 
                     }
                 }
@@ -101,10 +118,12 @@ public class Utils {
          *
          * @param gpioChip Il nome del GPIO chip (es: "gpiochip3")
          * @param line     La linea GPIO da monitorare (es: "21")
-         * @param textArea La textArea dove verrà scritto l'output
          */
         //buona, da valutare se migliorabile
-        public static void executeGpioTest(String gpioChip, String line, JTextArea textArea) {
+        public static void executeGpioTest(String gpioChip, String line) {
+
+            JTextArea outputArea = defaultTextArea;
+
             new Thread(() -> {
                 Process process = null;
                 BufferedReader reader = null;
@@ -122,15 +141,15 @@ public class Utils {
                         final String lineToAppend = outputLine;
 
                         // Aggiorna la textArea sull'EDT (Event Dispatch Thread)
-                        SwingUtilities.invokeLater(() -> textArea.append(lineToAppend + "\n"));
+                        SwingUtilities.invokeLater(() -> outputArea.append(lineToAppend + "\n"));
                     }
 
                     // Aspetta che il processo termini
                     process.waitFor();
-                    SwingUtilities.invokeLater(() -> textArea.append("Test terminato.\n"));
+                    SwingUtilities.invokeLater(() -> outputArea.append("Test terminato.\n"));
 
                 } catch (IOException | InterruptedException ex) {
-                    SwingUtilities.invokeLater(() -> textArea.append("Errore durante l'esecuzione del test.\n"));
+                    SwingUtilities.invokeLater(() -> outputArea.append("Errore durante l'esecuzione del test.\n"));
                     ex.printStackTrace();
                 } finally {
                     // Chiudere le risorse

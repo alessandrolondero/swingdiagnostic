@@ -25,7 +25,7 @@
             </properties>
             <border type="empty"/>
             <children>
-              <grid id="8418f" layout-manager="GridLayoutManager" row-count="20" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="8418f" layout-manager="GridLayoutManager" row-count="21" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints/>
                 <properties/>
@@ -33,15 +33,15 @@
                 <children>
                   <component id="ce279" class="javax.swing.JLabel">
                     <constraints>
-                      <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="4" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                      <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="4" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <text value="INGRESSI AUDIO"/>
+                      <text value="INPUT AUDIO"/>
                     </properties>
                   </component>
                   <component id="6ef0d" class="javax.swing.JButton" binding="SPARE_MICButton" default-binding="true">
                     <constraints>
-                      <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                      <grid row="14" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                         <preferred-size width="162" height="34"/>
                       </grid>
                     </constraints>
@@ -51,7 +51,7 @@
                   </component>
                   <component id="ea5da" class="javax.swing.JButton" binding="CABIN_MICButton" default-binding="true">
                     <constraints>
-                      <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                      <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                         <preferred-size width="162" height="34"/>
                       </grid>
                     </constraints>
@@ -61,7 +61,7 @@
                   </component>
                   <component id="eb700" class="javax.swing.JButton" binding="HANDSET_MICButton">
                     <constraints>
-                      <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                      <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                         <preferred-size width="162" height="34"/>
                       </grid>
                     </constraints>
@@ -74,12 +74,12 @@
                       <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <text value="USCITE DIGITALI"/>
+                      <text value="OUTPUT DIGITALI"/>
                     </properties>
                   </component>
                   <component id="fdffb" class="javax.swing.JLabel">
                     <constraints>
-                      <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                      <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
                       <text value="RETE"/>
@@ -87,7 +87,7 @@
                   </component>
                   <component id="e47f6" class="javax.swing.JButton" binding="LAN_TESTButton" default-binding="true">
                     <constraints>
-                      <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                      <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                         <preferred-size width="162" height="34"/>
                       </grid>
                     </constraints>
@@ -97,15 +97,15 @@
                   </component>
                   <component id="bee9c" class="javax.swing.JLabel">
                     <constraints>
-                      <grid row="14" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                      <grid row="15" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <text value="USCITE AUDIO"/>
+                      <text value="OUTPUT AUDIO"/>
                     </properties>
                   </component>
                   <component id="4a0ee" class="javax.swing.JButton" binding="PA_TESTButton" default-binding="true">
                     <constraints>
-                      <grid row="15" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                      <grid row="16" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                         <preferred-size width="162" height="34"/>
                       </grid>
                     </constraints>
@@ -115,7 +115,7 @@
                   </component>
                   <component id="8ce4c" class="javax.swing.JButton" binding="CABIN_TESTButton" default-binding="true">
                     <constraints>
-                      <grid row="16" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                      <grid row="17" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                         <preferred-size width="162" height="34"/>
                       </grid>
                     </constraints>
@@ -125,7 +125,7 @@
                   </component>
                   <component id="f78c6" class="javax.swing.JButton" binding="HANDSET_TESTButton" default-binding="true">
                     <constraints>
-                      <grid row="19" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                      <grid row="20" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                         <preferred-size width="162" height="34"/>
                       </grid>
                     </constraints>
@@ -135,7 +135,7 @@
                   </component>
                   <component id="90a2a" class="javax.swing.JButton" binding="OUT3_AMP_TESTButton" default-binding="true">
                     <constraints>
-                      <grid row="18" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                      <grid row="19" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                         <preferred-size width="162" height="34"/>
                       </grid>
                     </constraints>
@@ -145,7 +145,7 @@
                   </component>
                   <component id="377ba" class="javax.swing.JButton" binding="SPARE_TESTButton" default-binding="true">
                     <constraints>
-                      <grid row="17" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                      <grid row="18" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                         <preferred-size width="162" height="34"/>
                       </grid>
                     </constraints>
@@ -241,7 +241,17 @@
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <text value="INGRESSI DIGITALI"/>
+                      <text value="INPUT DIGITALI"/>
+                    </properties>
+                  </component>
+                  <component id="d5dc6" class="javax.swing.JButton" binding="BLINKButton" default-binding="true">
+                    <constraints>
+                      <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="162" height="34"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <text value="ATTIVA BLINK"/>
                     </properties>
                   </component>
                 </children>
@@ -257,7 +267,7 @@
             </properties>
             <border type="empty"/>
             <children>
-              <grid id="874e5" layout-manager="GridLayoutManager" row-count="5" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="874e5" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints/>
                 <properties/>
@@ -298,17 +308,7 @@
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <text value="BENCH TEST"/>
-                    </properties>
-                  </component>
-                  <component id="d5dc6" class="javax.swing.JButton" binding="BLINKButton" default-binding="true">
-                    <constraints>
-                      <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                        <preferred-size width="162" height="34"/>
-                      </grid>
-                    </constraints>
-                    <properties>
-                      <text value="ATTIVA BLINK"/>
+                      <text value="TEST COMBINATI"/>
                     </properties>
                   </component>
                 </children>
@@ -366,7 +366,7 @@
               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="3" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Volume Speaker"/>
+              <text value="Regolazione volume"/>
             </properties>
           </component>
           <component id="8c922" class="javax.swing.JSlider" binding="volumeslider">

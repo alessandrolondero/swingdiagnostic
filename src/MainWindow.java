@@ -72,12 +72,14 @@ public class MainWindow extends JFrame {
         OUT3_AMP_TESTButton.setToolTipText("Selezionare la posizione '4' sul commutatore rotativo. L'esito del test è ascoltabile dallo speaker della BCNK.");
         HANDSET_TESTButton.setToolTipText("Selezionare la posizione '4' sul commutatore rotativo. L'esito del test è ascoltabile dallo speaker della BCNK e da quello della cornetta.");
 
+        Utils.setDefaultTextArea(textArea);
+
         // Aggiungi i listener ai pulsanti, ognuno con la propria azione
         PA_PTTButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 textArea.append("premere e poi rilasciare il pulsante 'PA_PTT' per terminare il test.\n");
-                Utils.executeGpioTest("gpiochip3", "24", textArea);
+                Utils.executeGpioTest("gpiochip3", "24");
             }
         });
 
@@ -85,7 +87,7 @@ public class MainWindow extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 textArea.append("premere e poi rilasciare il pulsante 'D_IN' per terminare il test.\n");
-                Utils.executeGpioTest("gpiochip3", "26", textArea);
+                Utils.executeGpioTest("gpiochip3", "26");
             }
         });
 
@@ -93,7 +95,7 @@ public class MainWindow extends JFrame {
               @Override
               public void actionPerformed(ActionEvent e) {
                   textArea.append("Premere e poi rilasciare il pulsante 'CABIN_PTT' per terminare il test.\n");
-                  Utils.executeGpioTest("gpiochip3", "21", textArea);
+                  Utils.executeGpioTest("gpiochip3", "21");
               }
         });
 
@@ -101,7 +103,7 @@ public class MainWindow extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 textArea.append("premere e poi rilasciare il pulsante 'HANDSET_PTT' per terminare il test.\n");
-                Utils.executeGpioTest("gpiochip3", "28", textArea);
+                Utils.executeGpioTest("gpiochip3", "28");
             }
         });
 
@@ -109,7 +111,7 @@ public class MainWindow extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 textArea.append("premere e poi rilasciare il pulsante 'HANDSET_HOOK' per terminare il test.\n");
-                Utils.executeGpioTest("gpiochip3", "23", textArea);
+                Utils.executeGpioTest("gpiochip3", "23");
             }
         });
 
@@ -120,8 +122,8 @@ public class MainWindow extends JFrame {
                     @Override
                     public void run() {
                         // Esegui il comando
-                        String[] command = {"gpioset", "gpiochip3", "30=1"};
-                        String data = Utils.executeProcess(command);
+                        String command = "gpioset gpiochip3 30=1";
+                        Utils.execProcess(command);
 
                         // Aggiungi il risultato alla textArea
                         textArea.append("D_OUT=1 (ACCESO)\n");
@@ -137,8 +139,8 @@ public class MainWindow extends JFrame {
                     @Override
                     public void run() {
                         // Esegui il comando
-                        String[] command = {"gpioset", "gpiochip3", "30=0"};
-                        String data = Utils.executeProcess(command);
+                        String command = "gpioset gpiochip3 30=0";
+                        Utils.execProcess(command);
 
                         // Aggiungi il risultato alla textArea
                         textArea.append("D_OUT=0 (SPENTO)\n");
@@ -153,17 +155,17 @@ public class MainWindow extends JFrame {
                     @Override
                     public void run() {
                         // Esegui il comando
-                        Utils.execProcess("amixer -c 0 set \"INPGAL IN1L\" off", textArea);
-                        Utils.execProcess("amixer -c 0 set \"INPGAL IN1L\" on", textArea);
-                        Utils.execProcess("amixer -c 0 set \"INPGAR IN1R\" off", textArea);
-                        Utils.execProcess( "amixer -c 0 set \"INPGAR IN3R\" on", textArea);
-                        Utils.execProcess( "amixer -c 0 set \"MIXINR IN3R\" on", textArea);
+                        Utils.execProcess("amixer -c 0 set \"INPGAL IN1L\" off");
+                        Utils.execProcess("amixer -c 0 set \"INPGAL IN1L\" on");
+                        Utils.execProcess("amixer -c 0 set \"INPGAR IN1R\" off");
+                        Utils.execProcess( "amixer -c 0 set \"INPGAR IN3R\" on");
+                        Utils.execProcess( "amixer -c 0 set \"MIXINR IN3R\" on");
                         textArea.append("Inizio registrazione di 5 secondi dal microfono HANDSET (cornetta)...\n");
-                        Utils.execProcess("arecord -f S16_LE -d 5 -r 16000 --device=\"hw:0,0\" /tmp/test-mic.wav", textArea);
+                        Utils.execProcess("arecord -f S16_LE -d 5 -r 16000 --device=\"hw:0,0\" /tmp/test-mic.wav");
                         textArea.append("Fine registrazione.\n");
-                        Utils.execProcess("gpioset gpiochip4 5=1", textArea);
+                        Utils.execProcess("gpioset gpiochip4 5=1");
                         textArea.append("Inizio riproduzione file audio registrato...\n");
-                        Utils.execProcess("aplay /tmp/test-mic.wav", textArea);
+                        Utils.execProcess("aplay /tmp/test-mic.wav");
                         textArea.append("Fine riproduzione file audio.\n");
                     }
                 }).start();
@@ -177,16 +179,16 @@ public class MainWindow extends JFrame {
                     @Override
                     public void run() {
                         //settaggio microfoni
-                        Utils.execProcess("amixer -c 0 set \"INPGAR IN1R\" off", textArea);
-                        Utils.execProcess("amixer -c 0 set \"INPGAR IN3R\" off", textArea);
-                        Utils.execProcess( "amixer -c 0 set \"MIXINR IN3R\" off", textArea);
-                        Utils.execProcess( "amixer -c 0 set \"INPGAL IN1L\" on", textArea);
+                        Utils.execProcess("amixer -c 0 set \"INPGAR IN1R\" off");
+                        Utils.execProcess("amixer -c 0 set \"INPGAR IN3R\" off");
+                        Utils.execProcess( "amixer -c 0 set \"MIXINR IN3R\" off");
+                        Utils.execProcess( "amixer -c 0 set \"INPGAL IN1L\" on");
                         textArea.append("Inizio registrazione di 5 secondi dal microfono CABIN...\n");
-                        Utils.execProcess("arecord -f S16_LE -d 5 -r 16000 --device=\"hw:0,0\" /tmp/test-mic.wav", textArea);
+                        Utils.execProcess("arecord -f S16_LE -d 5 -r 16000 --device=\"hw:0,0\" /tmp/test-mic.wav");
                         textArea.append("Fine registrazione.\n");
-                        Utils.execProcess("gpioset gpiochip4 5=1", textArea);
+                        Utils.execProcess("gpioset gpiochip4 5=1");
                         textArea.append("Inizio riproduzione file audio registrato...\n");
-                        Utils.execProcess("aplay /tmp/test-mic.wav", textArea);
+                        Utils.execProcess("aplay /tmp/test-mic.wav");
                         textArea.append("Fine riproduzione file audio.\n");
                     }
                 }).start();
@@ -200,19 +202,19 @@ public class MainWindow extends JFrame {
                     @Override
                     public void run() {
                         // Esegui il comando
-                        Utils.execProcess("amixer -c 0 set \"INPGAR IN3R\" off", textArea);
-                        Utils.execProcess("amixer -c 0 set \"MIXINR IN3R\"\" off", textArea);
-                        Utils.execProcess( "amixer -c 0 set \"INPGAL IN1L\" off", textArea);
-                        Utils.execProcess( "amixer -c 0 set \"INPGAR IN1R\" on", textArea);
-                        Utils.execProcess( "amixer set \"ADC L/R Swap\" on", textArea);
+                        Utils.execProcess("amixer -c 0 set \"INPGAR IN3R\" off");
+                        Utils.execProcess("amixer -c 0 set \"MIXINR IN3R\"\" off");
+                        Utils.execProcess( "amixer -c 0 set \"INPGAL IN1L\" off");
+                        Utils.execProcess( "amixer -c 0 set \"INPGAR IN1R\" on");
+                        Utils.execProcess( "amixer set \"ADC L/R Swap\" on");
                         textArea.append("Inizio registrazione di 5 secondi dal microfono SPARE...\n");
-                        Utils.execProcess("arecord -f S16_LE -d 5 -r 16000 --device=\"hw:0,0\" /tmp/test-mic.wav", textArea);
+                        Utils.execProcess("arecord -f S16_LE -d 5 -r 16000 --device=\"hw:0,0\" /tmp/test-mic.wav");
                         textArea.append("Fine registrazione.\n");
-                        Utils.execProcess("gpioset gpiochip4 5=0", textArea);
+                        Utils.execProcess("gpioset gpiochip4 5=0");
                         textArea.append("Inizio riproduzione file audio registrato...\n");
-                        Utils.execProcess("aplay /tmp/test-mic.wav", textArea);
+                        Utils.execProcess("aplay /tmp/test-mic.wav");
                         textArea.append("Fine riproduzione file audio.\n");
-                        Utils.execProcess( "amixer set \"ADC L/R Swap\" off", textArea);
+                        Utils.execProcess( "amixer set \"ADC L/R Swap\" off");
                     }
                 }).start();
             }
@@ -225,8 +227,8 @@ public class MainWindow extends JFrame {
                         @Override
                         public void run() {
                             // Esegui il comando
-                            Utils.execProcess("ifconfig", textArea);
-                            Utils.execProcess("ping 10.0.0.1 -c 6", textArea);
+                            Utils.execProcess("ifconfig");
+                            Utils.execProcess("ping 10.0.0.1 -c 6");
                         }
                     }).start();
             }
@@ -238,7 +240,7 @@ public class MainWindow extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 // Crea e avvia un thread per eseguire i comandi in sequenza
                 textArea.append("\nInizio 'PA_TEST' ...\nSelezionare la posizione '2' sul commutatore rotativo. \nL'esito del test è ascoltabile dallo speaker della BCNK.\n");
-                Utils.playSampleAudio(textArea);
+                Utils.playSampleAudio();
             }
         });
 
@@ -248,8 +250,8 @@ public class MainWindow extends JFrame {
                 // Crea e avvia un thread per eseguire i comandi in sequenza
                 textArea.append("\nInizio 'CABIN_TEST' ...\nSelezionare la posizione '1' sul commutatore rotativo. \n" +
                         "L'esito del test è ascoltabile soltanto dallo speaker della cornetta.\n");
-                Utils.setMuxCtrl(1, textArea);
-                Utils.playSampleAudio(textArea);
+                Utils.setMuxCtrl(1);
+                Utils.playSampleAudio();
             }
         });
 
@@ -258,8 +260,8 @@ public class MainWindow extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 // Crea e avvia un thread per eseguire i comandi in sequenza
                 textArea.append("\nInizio 'SPARE_TEST' ...\nSelezionare la posizione '3' sul commutatore rotativo.\nL'esito del test è ascoltabile dallo speaker della BCNK.\n");
-                Utils.setMuxCtrl(0, textArea);
-                Utils.playSampleAudio(textArea);
+                Utils.setMuxCtrl(0);
+                Utils.playSampleAudio();
             }
         });
 
@@ -268,8 +270,8 @@ public class MainWindow extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 // Crea e avvia un thread per eseguire i comandi in sequenza
                 textArea.append("\nInizio 'OUT3_AMP_TEST' ...\nSelezionare la posizione '4' sul commutatore rotativo, ascoltare l'esito del test dallo speaker della BCNK.\n");
-                Utils.setMuxCtrl(1, textArea);
-                Utils.playSampleAudio(textArea);
+                Utils.setMuxCtrl(1);
+                Utils.playSampleAudio();
             }
         });
 
@@ -279,8 +281,8 @@ public class MainWindow extends JFrame {
                 // Crea e avvia un thread per eseguire i comandi in sequenza
                 textArea.append("\nInizio 'HANDSET_TEST' ...\nSelezionare la posizione '4' sul commutatore rotativo," +
                         "\nL'esito del test è ascoltabile dallo speaker della BCNK e da quello della cornetta.\n");
-                Utils.setMuxCtrl(1, textArea);
-                Utils.playSampleAudio(textArea);
+                Utils.setMuxCtrl(1);
+                Utils.playSampleAudio();
             }
         });
 
@@ -298,10 +300,9 @@ public class MainWindow extends JFrame {
                 // Quando l'utente rilascia il mouse, esegui il comando amixer con il valore dello slider
                 int value = volumeslider.getValue();
                 String volume = value + "%";
-                String[] command = {"amixer", "set", "Headphone", volume};
+                String command = "amixer set Headphone " + volume;
                 // Esegui il comando amixer
-                String data = Utils.executeProcess(command);
-                textArea.append(data);
+                Utils.execProcess(command);
                 volumeLabel.setText("Volume: "+volume);
             }
         });
@@ -312,7 +313,7 @@ public class MainWindow extends JFrame {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        Utils.execProcess("/usr/bin/handset_mic_test",textArea);
+                        Utils.execProcess("/usr/bin/handset_mic_test");
                     }
                 }).start();
             }
@@ -324,7 +325,7 @@ public class MainWindow extends JFrame {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        Utils.execProcess("/usr/bin/cabin_mic_test",textArea);
+                        Utils.execProcess("/usr/bin/cabin_mic_test");
                     }
                 }).start();
             }
@@ -336,7 +337,7 @@ public class MainWindow extends JFrame {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        Utils.execProcess("/usr/bin/in2out2_mic_test",textArea);
+                        Utils.execProcess("/usr/bin/in2out2_mic_test");
                     }
                 }).start();
             }
